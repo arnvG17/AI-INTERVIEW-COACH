@@ -1,0 +1,15 @@
+# Core NLP and ML
+sentence-transformers
+scikit-learn
+numpy
+torch
+spacy
+
+# Web framework
+Flask
+
+# Optional but recommended for JSON handling and better performance
+pandas
+
+# For smoother development / deployment
+gunicorn
