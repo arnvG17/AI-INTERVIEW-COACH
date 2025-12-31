@@ -119,3 +119,6 @@ Thumbs.db
 
 # Ignore response files (temporary/generated)
 response_*/
+
+# Project structure documentation
+structure.txt

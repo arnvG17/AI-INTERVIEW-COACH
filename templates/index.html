@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Interview Coach</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">AI Interview Coach</h1>
+    
+    <form method="POST" action="/evaluate">
+        <div class="mb-3">
+            <label for="question" class="form-label">Select Question:</label>
+            <select class="form-select" name="question_id" id="question">
+                {% for q in questions %}
+                    <option value="{{ loop.index0 }}" 
+                        {% if selected_question_id is defined and selected_question_id == loop.index0 %}selected{% endif %}>
+                        {{ q["question"] }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div class="mb-3">
+            <label for="answer" class="form-label">Your Answer:</label>
+            <textarea class="form-control" id="answer" name="answer" rows="5">{{ user_answer if user_answer is defined else '' }}</textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Evaluate Answer</button>
+    </form>
+    
+    {% if result is defined %}
+        <div class="mt-5">
+            <h3>Final Score: {{ result.final_score }}</h3>
+            <hr>
+            <h4>Feature-wise Feedback:</h4>
+            <ul>
+                {% for feature, info in result.explanation.items() %}
+                    <li><strong>{{ feature.replace('_', ' ').title() }}:</strong> {{ info.score }}% - {{ info.reason }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+</div>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

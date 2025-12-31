@@ -1,39 +1,32 @@
+from flask import Flask, render_template, request, jsonify
 from src.embeddings import EmbeddingModel
+from src.scorer import final_scoring
 from src.data_loader import load_questions
 
+app = Flask(__name__)
 
-def main():
-    print("Initializing AI Interview Coach...")
-    ai_engine = EmbeddingModel()
+# Initialize embedding model
+embedding_model = EmbeddingModel()
+questions_data = load_questions()
 
-    print("\nLoading questions...")
-    questions = load_questions()
+@app.route("/", methods=["GET"])
+def home():
+    return render_template("index.html", questions=questions_data)
 
-    print("\n--- TEST RUN ---")
-    selected_q = questions[0]
-    print(f"Question: {selected_q['question']}")
+@app.route("/evaluate", methods=["POST"])
+def evaluate():
+    user_answer = request.form.get("answer", "")
+    question_id = int(request.form.get("question_id", 0))
+    
+    question = questions_data[question_id]
+    ideal_answer = question["ideal_answer"]
+    keywords = question.get("keywords", [])
 
-    user_answer = (
-        "I had to deliver a project in 48 hours. "
-        "I prioritized tasks, communicated with the team, "
-        "and successfully completed it on time."
-    )
-
-    score = ai_engine.get_score(
-        user_answer,
-        selected_q["ideal_answer"]
-    )
-
-    print(f"\nUser Answer: {user_answer}")
-    print(f"AI Score: {score}")
-
-    if score > 0.7:
-        print("Feedback: Great job! Detailed and relevant.")
-    elif score > 0.4:
-        print("Feedback: Good start, but try to add more STAR details.")
-    else:
-        print("Feedback: Your answer seems off-topic.")
-
+    result = final_scoring(user_answer, ideal_answer, keywords, embedding_model)
+    return render_template("index.html", questions=questions_data,
+                           selected_question_id=question_id,
+                           user_answer=user_answer,
+                           result=result)
 
 if __name__ == "__main__":
-    main()
+    app.run(debug=True)

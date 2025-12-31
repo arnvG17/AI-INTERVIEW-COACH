@@ -11,15 +11,18 @@ class EmbeddingModel:
         self.model = SentenceTransformer(model_name)
         print("SBERT model loaded successfully.")
 
+    def encode(self, texts):
+        """
+        Encodes a list of texts into embeddings.
+        """
+        return self.model.encode(texts, normalize_embeddings=True)
+
     def get_score(self, user_text: str, ideal_text: str) -> float:
         """
         Computes cosine similarity between user answer and ideal answer.
         Returns score between 0 and 1.
         """
-        embeddings = self.model.encode(
-            [user_text, ideal_text],
-            normalize_embeddings=True  # improves cosine stability
-        )
+        embeddings = self.encode([user_text, ideal_text])
 
         user_emb, ideal_emb = embeddings
 
