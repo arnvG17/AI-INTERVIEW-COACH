@@ -1,0 +1,52 @@
+[
+  {
+    "question": "Tell me about a time you faced a tight deadline.",
+    "ideal_answer": "Situation: I was given a data analysis task with a 48-hour deadline. Task: Deliver accurate insights without compromising quality. Action: I broke the work into milestones, prioritized key metrics, and coordinated quick reviews with stakeholders. Result: I delivered on time, and the insights were used in the final presentation.",
+    "keywords": ["prioritization", "time management", "planning", "execution", "results"]
+  },
+  {
+    "question": "Describe a time you handled a conflict with a teammate.",
+    "ideal_answer": "Situation: A teammate and I disagreed on the technical approach. Task: Resolve the conflict without delaying the project. Action: I listened to their perspective, explained mine with data, and suggested a small experiment. Result: We chose the better solution collaboratively and strengthened our working relationship.",
+    "keywords": ["communication", "conflict resolution", "listening", "collaboration", "compromise"]
+  },
+  {
+    "question": "Give an example of a failure and what you learned.",
+    "ideal_answer": "Situation: I once underestimated testing time for a feature. Task: Fix the issue quickly and learn from it. Action: I took ownership, extended testing, and documented lessons learned. Result: The fix was stable, and future projects had better estimates.",
+    "keywords": ["accountability", "learning", "adaptability", "problem-solving", "growth"]
+  },
+  {
+    "question": "Tell me about a time you took initiative.",
+    "ideal_answer": "Situation: Our team lacked documentation for onboarding. Task: Improve the process without being asked. Action: I created a concise guide and shared it with the team. Result: New hires ramped up faster and managers adopted it as a standard.",
+    "keywords": ["initiative", "ownership", "proactiveness", "impact", "improvement"]
+  },
+  {
+    "question": "Describe a time you worked under pressure.",
+    "ideal_answer": "Situation: A production issue occurred during peak hours. Task: Restore service quickly. Action: I stayed calm, followed incident protocols, and communicated status updates. Result: The issue was resolved within SLA and customers were informed promptly.",
+    "keywords": ["stress management", "calmness", "execution", "communication", "reliability"]
+  },
+  {
+    "question": "Tell me about a time you received critical feedback.",
+    "ideal_answer": "Situation: I was told my updates were too technical for stakeholders. Task: Improve clarity. Action: I asked for examples, simplified my messaging, and adjusted presentations. Result: Feedback improved and meetings became more effective.",
+    "keywords": ["feedback", "self-improvement", "communication", "openness", "adaptation"]
+  },
+  {
+    "question": "Give an example of teamwork leading to success.",
+    "ideal_answer": "Situation: We had to deliver a project across multiple functions. Task: Ensure alignment. Action: I coordinated meetings, clarified roles, and supported teammates. Result: The project launched smoothly and met all goals.",
+    "keywords": ["teamwork", "coordination", "alignment", "support", "success"]
+  },
+  {
+    "question": "Describe a time you solved a difficult problem.",
+    "ideal_answer": "Situation: Model performance dropped unexpectedly. Task: Identify the root cause. Action: I analyzed data drift, retrained the model, and added monitoring. Result: Performance recovered and future issues were detected early.",
+    "keywords": ["analysis", "problem-solving", "diagnosis", "technical skill", "results"]
+  },
+  {
+    "question": "Tell me about a time you had to learn something quickly.",
+    "ideal_answer": "Situation: I was assigned a task using a new library. Task: Deliver without delays. Action: I studied documentation, built a small prototype, and applied it. Result: The feature was completed on schedule.",
+    "keywords": ["learning agility", "curiosity", "adaptability", "self-learning", "delivery"]
+  },
+  {
+    "question": "Describe a time you handled ambiguity.",
+    "ideal_answer": "Situation: Project requirements were unclear. Task: Move forward despite uncertainty. Action: I asked clarifying questions, proposed assumptions, and validated them early. Result: Scope was finalized quickly and rework was minimized.",
+    "keywords": ["ambiguity", "clarification", "decision-making", "initiative", "execution"]
+  }
+]
