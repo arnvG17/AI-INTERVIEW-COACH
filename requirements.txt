@@ -1,0 +1,16 @@
+# Web Framework
+Flask==3.0.0
+Werkzeug==3.0.1
+
+# NLP and Machine Learning
+sentence-transformers==2.2.2
+scikit-learn==1.3.2
+spacy==3.7.2
+numpy==1.26.2
+
+# Production Server
+gunicorn==21.2.0
+
+# Additional Dependencies (required by above packages)
+torch==2.1.1
+transformers==4.35.2
